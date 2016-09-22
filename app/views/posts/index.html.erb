@@ -1,1 +1,7 @@
-<h1>Fake_a_gram</h1>
+<h1>Fakegram</h1>
+<br>
+
+<% @posts.each do |post| %>
+	<%= image_tag post.image.url(:medium) %>
+	<p><%= post.caption %></p>
+	<% end %>
