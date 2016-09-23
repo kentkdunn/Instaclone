@@ -1,8 +1,13 @@
 <h1>Fakegram</h1>
 <br>
-
+	
+	
 	<%= image_tag @post.image.url(:medium) %>
 	<p><%= @post.caption %></p>
+	<%- if @post.user.id == current_user.id %>
 	<%=link_to "Cancel", posts_path %>
 	<%= link_to "Edit Post", edit_post_path(@post) %>
+	<%-else %>
+	<%= link_to "Cancel", posts_path %>
+	<% end %>
 	
